@@ -1,0 +1,55 @@
+image: node
+
+cache:
+  paths:
+    - node_modules
+
+stages:
+  - install
+  - lint
+  - build
+  - deploy
+
+install:
+  stage: install
+  script:
+    # install dependencies
+    - yarn install
+
+lint:
+  stage: lint
+  needs: ["install"]
+  script:
+    # Run eslint
+    - yarn lint
+
+test:
+  stage: lint
+  needs: ["install"]
+  script:
+    # Run eslint
+    - yarn coverage
+
+build:
+  stage: build
+  needs: ["test", "lint"]
+  artifacts:
+    paths:
+    - dist
+  script:
+    # Run build
+    - yarn build
+
+pages:
+  stage: deploy
+  needs: ["build"]
+  when: manual
+  script:
+    - mv dist public
+  artifacts:
+    paths:
+      - public
+  dependencies: 
+    - build
+  only:
+    - main
