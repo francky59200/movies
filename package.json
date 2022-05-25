@@ -11,10 +11,12 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "vitest --passWithNoTests",
-    "coverage": "vitest run --coverage --passWithNoTests"
+    "coverage": "vitest run --coverage --passWithNoTests",
+    "mock": "node node_modules/@staticdeploy/mock-server/src/bin/index.js --watch"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.23.1",
+    "@staticdeploy/mock-server": "3.0.0",
     "autoprefixer": "^10.4.7",
     "c8": "^7.11.3",
     "eslint": "^8.16.0",

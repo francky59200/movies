@@ -28,6 +28,16 @@ Just run and visit http://localhost:3000
 yarn dev
 ```
 
+### API
+
+Just run and visit http://localhost:3456  
+
+```bash
+yarn mock
+```
+[API Documentation](https://app.swaggerhub.com/apis-docs/amelique-atecna/Atecna-workout/1.0.0)  
+[Postman Collection](atecna-workout-api.postman_collection.json)
+
 ### Build
 
 To build the App, run
@@ -40,7 +50,7 @@ And you will see the generated file in `dist` that ready to be served.
 
 ### Page
 
-Deploy manually your pages on pipeline succeed, then visit (replace with your repository path): https://atecna-frontend.gitlab.io/formations/starterkit
+Deploy manually your pages on pipeline succeed, then visit (replace with your repository path):  https://atecna-frontend.gitlab.io/formations/starterkit
 
 ## Wiki
 
