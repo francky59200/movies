@@ -15,6 +15,25 @@ When you use this template, try follow the checklist to update your info properl
 
 - [ ] Change the title in `index.html`
 - [ ] Remove tests in test directory and/or write your own
+- [ ] Chose a framework if you want (vue, react, svelte) by uncommenting plugin in `vite.config.js`
+- [ ] Add your framework packages, ex: `yarn add vue@latest --save-dev`
+- [ ] Update `main.js` to handle your framework if need
+
+```js
+import { defineConfig } from 'vite'
+// import { react } from '@vitejs/plugin-react'
+import Vue from '@vitejs/plugin-vue'
+// import { svelte } from '@sveltejs/vite-plugin-svelte'
+
+export default defineConfig({
+  base: './',
+  plugins: [
+    // react(),
+    Vue(),
+    // svelte(),
+  ],
+})
+```
 
 And, enjoy :)
 
