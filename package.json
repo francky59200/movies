@@ -1,11 +1,10 @@
 {
-  "name": "starterkit",
+  "name": "starter-kit",
   "version": "1.0.0",
   "description": "Atecna Academy starter kit",
   "license": "MIT",
   "author": "ATECNA",
-  "repository": "git@gitlab_atecna:atecna-frontend/formations/starterkit.git",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
