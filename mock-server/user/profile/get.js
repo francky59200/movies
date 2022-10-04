@@ -1,16 +1,16 @@
 const data = require('../../userInfo.json')
 
 module.exports = (req, res) => {
-  if( req.headers.token === data.user.token ) {
+  if (req.headers.token === data.user.token) {
     res.status(200).send({
-      "name": data.user.name,
-      "lastname": data.user.lastname,
-      "nickname": data.user.nickname,
-      "email": data.user.email,
-      "city": data.user.city,
-      "avatar": data.user.avatar
-    });
+      name: data.user.name,
+      lastname: data.user.lastname,
+      nickname: data.user.nickname,
+      email: data.user.email,
+      city: data.user.city,
+      avatar: data.user.avatar,
+    })
     return
   }
-  res.status(401).send("Invalid credentials");
-};
+  res.status(401).send('Invalid credentials')
+}

@@ -40,16 +40,16 @@ build:
     # Run build
     - yarn build
 
-pages:
-  stage: deploy
-  needs: ["build"]
-  when: manual
-  script:
-    - mv dist public
-  artifacts:
-    paths:
-      - public
-  dependencies: 
-    - build
-  only:
-    - main
+# pages:
+#   stage: deploy
+#   needs: ["build"]
+#   when: manual
+#   script:
+#     - mv dist public
+#   artifacts:
+#     paths:
+#       - public
+#   dependencies: 
+#     - build
+#   only:
+#     - main
