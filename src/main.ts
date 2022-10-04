@@ -1,7 +1,7 @@
 import './styles/main.scss'
 import logoPath from './images/logo-black.svg'
 
-const app = document.querySelector('#app')
+const app = document.querySelector('#app')!
 
 const intro = 'Welcome to the Atecna Front-End Academy training starter kit'
 

@@ -1,8 +1,10 @@
 image: node
 
 cache:
+  key: ${CI_COMMIT_REF_SLUG}
   paths:
-    - node_modules
+    - node_modules/
+    - .npm/
 
 stages:
   - install
@@ -20,15 +22,26 @@ lint:
   stage: lint
   needs: ["install"]
   script:
-    # Run eslint
     - yarn lint
 
 test:
   stage: lint
   needs: ["install"]
   script:
-    # Run eslint
-    - yarn coverage
+    - yarn test:unit:coverage
+
+e2e:
+  image: cypress/base:16
+  stage: lint
+  script:
+    - yarn install
+    - yarn preview & yarn test:e2e:run
+  artifacts:
+    when: on_failure
+    paths:
+      - cypress/videos/**/*.mp4
+      - cypress/screenshots/**/*.png
+    expire_in: 1 day
 
 build:
   stage: build
