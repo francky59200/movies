@@ -2,7 +2,7 @@
 
 ### Gitlab Template
 
-[Create a repo from this template on Gitlab](https://gitlab.com/atecna-frontend/formations/starterkit/export).
+[Create a repo from this template on Gitlab](https://atecna.gitlab.host/frontEnd/formation/starter-kit/export).
 
 ```bash
 cd your-project-name
