@@ -2,7 +2,7 @@
 
 ### Gitlab Template
 
-[Create a repo from this template on Gitlab](https://atecna.gitlab.host/frontEnd/formation/starter-kit/export).
+[Download](https://atecna.gitlab.host/frontEnd/formation/starter-kit/download_export) an export of this starter-kit, then use [GitLab Import](https://atecna.gitlab.host/import/gitlab_project/new?namespace_id=451&name=&path=).
 
 ```bash
 cd your-project-name
