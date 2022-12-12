@@ -74,3 +74,10 @@ Deploy manually your pages on pipeline succeed, then visit (replace with your re
 ## Wiki
 
 [Wiki](https://gitlab.com/atecna-frontend/formations/starterkit/-/wikis/home)
+
+## Figma
+
+- 🔧 Wireframe + User flow : [Voir le Fig Jam](https://www.figma.com/file/FSpJMub3WPbZILzmDPanfo/Atelier-Wireframe---Formation-front-end?node-id=0%3A1)
+- 🎉 UI kit (Logo/Styles/Icons/Typographie/Buttons/Components) : [Voir l'UI Kit](https://www.figma.com/file/uj1V4siWQmwfGuNuFDHvnb/Library---Formation?node-id=20%3A4107)
+- 🎨 Maquettes Def (Ecrans de l'application) : [Voir les Maquettes](https://www.figma.com/file/RnuECqTTyGvtItflD3TKVk/%5BWEB-SPORTIVE%5D-Front-end-starter?node-id=56%3A281)
+- 🎮 Prototype : [Voir le Prototype](https://www.figma.com/proto/RnuECqTTyGvtItflD3TKVk/%5BWEB-SPORTIVE%5D-Front-end-starter?page-id=56%3A248&node-id=201%3A1767&viewport=279%2C-3022%2C0.25&scaling=scale-down&starting-point-node-id=201%3A1767)
