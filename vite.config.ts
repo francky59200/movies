@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
-import path from 'path'
+import path from 'node:path'
 import { defineConfig } from 'vite'
+
 // import { react } from '@vitejs/plugin-react'
 // import Vue from '@vitejs/plugin-vue'
 // import { svelte } from '@sveltejs/vite-plugin-svelte'

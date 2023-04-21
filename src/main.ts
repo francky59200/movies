@@ -18,7 +18,8 @@ const mainClassList = [
   'px-4',
   'py-10',
   'container',
-  'mx-auto', 'flex',
+  'mx-auto',
+  'flex',
   'justify-center',
   'flex-col',
   'content-center',
@@ -32,4 +33,3 @@ mainDom.appendChild(logo)
 mainDom.appendChild(introDom)
 
 app.appendChild(mainDom)
-
