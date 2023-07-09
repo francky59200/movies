@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const dotenv = require('dotenv')
+import * as dotenv from 'dotenv'
 
 dotenv.config()
 
@@ -10,9 +9,11 @@ interface DefaultOptions {
   headers?: { 'Content-Type'?: string; Authorization?: string }
 }
 
+const API_URL = import.meta.env.VITE_URL
+
 export default function fetchClient() {
   const defaultOptions: DefaultOptions = {
-    baseURL: process.env.BASE_URL,
+    baseURL: API_URL,
     headers: {
       'Content-Type': 'application/json',
     },

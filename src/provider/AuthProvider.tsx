@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import React, { createContext, useEffect, useMemo, useState } from 'react'
-import { useLocation } from 'react-router-dom'
 import type { Account } from '~/types/account/account'
 import { getUser } from '~/actions/account'
 
@@ -13,13 +12,6 @@ const AuthContext = createContext<AuthInterface>({} as AuthInterface)
 
 function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<Account>()
-  const [error, setError] = useState<any>()
-  const location = useLocation()
-
-  useEffect(() => {
-    if (error)
-      setError(undefined)
-  }, [location.pathname])
 
   useEffect(() => {
     getUser().then(res => setUser(res))
@@ -28,9 +20,8 @@ function AuthProvider({ children }: { children: ReactNode }) {
   const memoValue: any = useMemo(
     () => ({
       user,
-      error,
     }),
-    [user, error],
+    [user],
   )
 
   return (
