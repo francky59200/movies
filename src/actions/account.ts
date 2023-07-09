@@ -1,15 +1,52 @@
 import type { AccountToken } from '~/types/account/accountToken'
-import { axiosInstance } from '~/api'
+import fetchClient from '~/api'
 import type { Account } from '~/types/account/account'
 
-export const login = async (email: string, password: string): Promise<AccountToken> => {
-  const payload = {
-    email,
-    password,
+export async function login(email: string, password: string): Promise<AccountToken> {
+  try {
+    const payload = {
+      email,
+      password,
+    }
+    const { data: token } = await fetchClient().post('/login', payload)
+    localStorage.setItem('token', token)
+    return token
   }
-  return await axiosInstance.post('/login', payload)
+  catch (e) {
+    throw e
+  }
 }
 
-export const update = async (account: Account): Promise<Account> => {
-  return await axiosInstance.post('/user/profile', account)
+export function logout(): void {
+  return localStorage.removeItem('token')
+}
+
+export async function update(account: Account): Promise<Account> {
+  try {
+    const { data } = await fetchClient().post('/user/profile', account)
+    return data
+  }
+  catch (e) {
+    throw e
+  }
+}
+
+export async function getUser(): Promise<Account> {
+  try {
+    const { data: user } = await fetchClient().get('/user/resume')
+    return user
+  }
+  catch (e) {
+    throw e
+  }
+}
+
+export async function getProfile(): Promise<Account> {
+  try {
+    const { data: profile } = await fetchClient().get('/user/profile')
+    return profile
+  }
+  catch (e) {
+    throw e
+  }
 }
