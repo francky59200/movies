@@ -5,5 +5,5 @@ export interface Resume {
   totalKilometer: string
   totalTime: string
   fastestKilometer: string
-  lastTrophy: Trophy
+  lastTrophy?: Trophy
 }
