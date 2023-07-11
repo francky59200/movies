@@ -16,6 +16,7 @@ export default function fetchClient() {
 
   instance.interceptors.request.use((config) => {
     const token: string | null = localStorage.getItem('token')
+    console.log(token)
     config.headers.Authorization = token ? `Bearer ${token}` : ''
     return config
   })

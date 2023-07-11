@@ -9,7 +9,12 @@
   "rules": {
     "@typescript-eslint/no-require-imports": "off",
     "no-useless-catch": "off",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "antfu/top-level-function": "off",
+    "no-console": "off"
+  }, .
+  "parserOptions": {
+    "parser": "babel-eslint"
   },
   "settings": {
     "import/resolver": {
