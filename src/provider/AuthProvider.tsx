@@ -1,27 +1,38 @@
 import type { ReactNode } from 'react'
 import React, { createContext, useEffect, useMemo, useState } from 'react'
 import type { Account } from '~/types/account/account'
-import { getUser } from '~/actions/account'
+import { getUserProfile, getUserResume } from '~/actions/account'
+import type { Resume } from '~/types/account/resume'
+import type { Trophy } from '~/types/trophy/trophy'
+import { getTrophies } from '~/actions/trophies'
 
 interface AuthInterface {
-  user: Account
+  user: Resume
   error: any
+  profile: Account
+  trophies: Trophy[]
 }
 
 const AuthContext = createContext<AuthInterface>({} as AuthInterface)
 
 function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<Account>()
+  const [user, setUser] = useState<Resume>()
+  const [profile, setProfile] = useState<Account>()
+  const [trophies, setTrophies] = useState<Trophy[]>()
 
   useEffect(() => {
-    getUser().then(res => setUser(res))
+    getUserResume().then(res => setUser(res))
+    getUserProfile().then(res => setProfile(res))
+    getTrophies().then(res => setTrophies(res))
   }, [])
 
   const memoValue: any = useMemo(
     () => ({
       user,
+      profile,
+      trophies,
     }),
-    [user],
+    [user, profile, trophies],
   )
 
   return (
