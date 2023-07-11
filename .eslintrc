@@ -12,7 +12,7 @@
     "import/no-unresolved": "off",
     "antfu/top-level-function": "off",
     "no-console": "off"
-  }, .
+  },
   "parserOptions": {
     "parser": "babel-eslint"
   },
