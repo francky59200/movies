@@ -13,10 +13,10 @@ interface AuthInterface {
   trophies: Trophy[]
 }
 
-const AuthContext = createContext<AuthInterface>({} as AuthInterface)
+export const AuthContext = createContext<AuthInterface>({} as AuthInterface)
 
 function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<Resume>()
+  const [user, setUser] = useState<Resume>({ workoutNumber: 12, totalTime: 'greyy', totalKilometer: 'shsjhsjd', fastestKilometer: 'shdsdh' })
   const [profile, setProfile] = useState<Account>()
   const [trophies, setTrophies] = useState<Trophy[]>()
 
