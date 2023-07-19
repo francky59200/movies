@@ -6,6 +6,8 @@ import Home from '~/components/Home/Home'
 import Dashboard from '~/components/Dashboard/Dashboard'
 import Trophies from '~/components/trophies/trophies'
 import WorkhoutDetail from '~/components/workhoutDetail/workhoutDetail'
+import Profil from '~/components/Profil/Profil'
+import NotFound from '~/components/NotFound/NotFound'
 
 const router = createBrowserRouter([
   {
@@ -13,16 +15,29 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: '/resume',
-    element: <Dashboard />,
+    path: '/account',
+    children: [
+      {
+        index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: 'trophies',
+        element: <Trophies />,
+      },
+      {
+        path: 'workhoutDetail',
+        element: <WorkhoutDetail />,
+      },
+      {
+        path: 'profil',
+        element: <Profil />,
+      },
+    ],
   },
   {
-    path: '/trophies',
-    element: <Trophies />,
-  },
-  {
-    path: '/workhoutDetail',
-    element: <WorkhoutDetail />,
+    path: '*',
+    element: <NotFound />,
   },
 ])
 
