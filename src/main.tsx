@@ -2,17 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import AuthProvider from '~/provider/AuthProvider'
-import Home from '~/components/Home/Home'
 import Dashboard from '~/components/Dashboard/Dashboard'
 import Trophies from '~/components/trophies/trophies'
 import WorkhoutDetail from '~/components/workhoutDetail/workhoutDetail'
 import Profil from '~/components/Profil/Profil'
 import NotFound from '~/components/NotFound/NotFound'
+import Connexion from '~/components/Connexion/Connexion'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
+    element: <Connexion />,
   },
   {
     path: '/account',

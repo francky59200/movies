@@ -1,10 +1,14 @@
 module.exports = {
   content: [
     './index.html',
-    './src/**/*.{js,ts}',
+    './src/**/*.{js,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'login-hero': 'url(\'./src/public/images/loginImage.png\')',
+      },
+    },
   },
   plugins: [],
 }
