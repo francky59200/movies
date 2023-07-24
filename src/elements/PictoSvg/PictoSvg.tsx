@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { ReactSVG } from 'react-svg'
 
 export interface Props {
-  icon: string
+  icon?: string
+  className?: string
 }
 
-const PictoSvg = ({ icon }: Props) => {
+const PictoSvg = ({ icon, className }: Props) => {
   const [svgSource, setSvgSource] = useState<any>('')
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const PictoSvg = ({ icon }: Props) => {
     }
   }, [icon, setSvgSource])
 
-  return <ReactSVG src={svgSource} />
+  return <ReactSVG className={className } src={svgSource} />
 }
 
 export default PictoSvg
