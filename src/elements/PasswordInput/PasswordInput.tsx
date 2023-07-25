@@ -1,23 +1,61 @@
 import React, { useState } from 'react'
 import { IconButton, InputAdornment, TextField } from '@mui/material'
+import { styled } from '@mui/material/styles'
+import { useController } from 'react-hook-form'
 import PictoSvg from '~/elements/PictoSvg/PictoSvg'
 
 export interface Props {
   error?: boolean
   helperText?: string
-  text: string
+  name: string
+  control: any
+  label: string
 }
 
-const PasswordInput = ({ error, helperText, text }: Props) => {
+const StyledTextField = styled(TextField)({
+  'marginBottom': '2rem',
+  'width': '100%',
+  '& label': {
+    color: 'white',
+  },
+  '&:hover label': {
+    fontWeight: 700,
+  },
+  '& label.Mui-focused': {
+    color: 'white',
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: 'white',
+  },
+  '& .MuiOutlinedInput-root': {
+    'color': 'white',
+    '& fieldset': {
+      borderColor: 'white',
+    },
+    '&:hover fieldset': {
+      borderColor: 'white',
+      borderWidth: 2,
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'white',
+    },
+  },
+})
+
+const PasswordInput = ({ error, helperText, name, control, label }: Props) => {
   const [showPassword, setShowPassword] = useState<boolean>(false)
+  const { field } = useController({
+    name,
+    control,
+  })
   const handleClickShowPassword = () => setShowPassword(!showPassword)
   return (
-        <TextField sx={{ marginBottom: 4, width: '100%' }} color="success" type={showPassword ? 'text' : 'password'} id="outlined-basic" label={text} error={error} helperText={helperText} InputProps={{
+        <StyledTextField type={showPassword ? 'text' : 'password'} id="outlined-basic" label={label} name={field.name} onChange={field.onChange} value={field.value} error={error} helperText={helperText} InputProps={{
           endAdornment: <InputAdornment position="end">
                 <IconButton aria-label="toggle password visibility"
                             onClick={handleClickShowPassword}
                             edge="end">
-                    {showPassword ? <PictoSvg icon="eye-show" /> : <PictoSvg icon="eye-hidden" />}
+                    {showPassword ? <PictoSvg className="text-white" icon="eye-show" /> : <PictoSvg icon="eye-hidden" />}
                 </IconButton>
             </InputAdornment>,
         }} variant="outlined" />
