@@ -33,14 +33,14 @@ const Connexion = () => {
             <div className="bg-colorHome pb-4 h-full pt-6">
                 {showRegister
                   ? <form className=" px-6" onSubmit={handleSubmit(onSubmit)}>
-                        <TextInput control={control} name="name" label="Nom du compte" type="text" className="mb-5" />
-                        <TextInput control={control} name="Email" type="email" label="email" className="mb-5" />
+                        <TextInput name="name" label="Nom du compte" type="text" data="input-name-register" placeholder="Nom du compte" />
+                        <TextInput name="Email" type="email" label="email" className="mb-5" />
                         <PasswordInput control={control} label="Mot de passe" name="password" />
                         <PasswordInput control={control} label="Retapez votre mot de passe" name="confirm" />
                         <Button text='Creer mon compte' className="text-white" />
                     </form>
                   : <form className=" px-6 relative">
-                        <TextInput control={control} name="name" type="text" label="Nom du compte" className="mb-5" />
+                        <TextInput name="name" type="text" data="input-name-login" label="Nom du compte" className="mb-5" placeholder="Nom du compte" />
                         <PasswordInput control={control} label="Mot de passe" name="password" />
                         <a className='no-underline text-primary-1 font-bold -mt-6 mb-9 block text-[0.9rem]'>Mot de passe oublié</a>
                         <Button text='Me connecter' className="text-white" />

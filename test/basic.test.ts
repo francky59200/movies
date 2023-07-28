@@ -11,11 +11,15 @@ test('Math.sqrt()', () => {
 test('JSON', () => {
   const input = {
     foo: 'hello',
-    bar: 'world',
+    bar: 'bar',
   }
 
   const output = JSON.stringify(input)
 
-  expect(output).eq('{"foo":"hello","bar":"world"}')
+  expect(output).eq('{"foo":"hello","bar":"bar"}')
   assert.deepEqual(JSON.parse(output), input, 'matches original')
+})
+
+test('Does not do much!', () => {
+  expect(true).to.equal(true)
 })

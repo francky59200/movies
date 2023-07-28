@@ -7,7 +7,7 @@ context('Basic', () => {
     cy.url()
       .should('eq', 'http://localhost:3333/')
 
-    cy.contains('Atecna')
+    cy.contains('Booya')
       .should('exist')
   })
 })

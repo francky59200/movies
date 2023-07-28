@@ -10,6 +10,8 @@ const PictoSvg = ({ icon, className }: Props) => {
   const [svgSource, setSvgSource] = useState<any>('')
 
   useEffect(() => {
+    if (icon === undefined)
+      return
     let isMounted = true
     import(`../../public/icons/${icon}.svg`).then((module) => {
       return isMounted && setSvgSource(module.default)
