@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.5",
+    "@cucumber/cucumber": "^9.3.0",
     "@staticdeploy/mock-server": "3.0.0",
     "@sveltejs/vite-plugin-svelte": "^2.0.4",
     "@types/react": "^18.2.14",
