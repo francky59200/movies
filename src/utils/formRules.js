@@ -15,6 +15,12 @@ export const rules = {
       message: 'Votre mot de passe n\'est pas correcte',
     },
   },
+  confirm: {
+    required: { value: true, message: 'Ce champ est obligatoire' },
+    validate(value, formValues) {
+      return formValues.password === value || 'Le mot de passe que vous avez renseignez ne correspond pas'
+    },
+  },
   name: {
     required: { value: true, message: 'Ce champ est obligatoire' },
     minLength: { value: 2, message: 'Votre nom est trop court' },

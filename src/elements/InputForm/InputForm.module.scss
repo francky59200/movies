@@ -7,11 +7,13 @@
 
 .form__field {
   font-family: inherit;
+  position: relative;
   width: 100%;
   border: 1px solid;
   border-radius: 0.3rem;
   outline: 0;
   font-size: 1.2rem;
+  color: white;
   padding: 0.4rem 0 0.4rem 1rem;
   background: transparent;
   transition: border-color 0.2s;
