@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import style from './InputForm.module.scss'
-import PictoSvg from '~/elements/PictoSvg/PictoSvg'
 
 export interface Props {
-  name: string
-  label: string
-  type: string
+  name?: string
+  label?: string
+  type?: string
   defaultValue?: string
   id?: string
   helperText?: string
@@ -22,20 +21,16 @@ const classNames = (...classes: any) => {
   return classes.join(' ')
 }
 
-const InputForm = ({ name, type, label, placeholder, data, isValid, isNotValid, messageError }: Props) => {
-  const [showPassword, setShowPassword] = useState<boolean>(false)
+const InputForm: React.FC<Props> = React.forwardRef(({
+  id, type, placeholder,
+  data, isValid, isNotValid, ...params
+}, ref: React.ForwardedRef<HTMLInputElement>) => {
   return (
-        <div className={style.form__group}>
-          <input type={type} id={name} data-cy={data}
-                  className={classNames(style.form__field, isValid && 'text-indigo-600', isNotValid && 'text-red-600')}
+          <input type={type} id={id} data-cy={data} {...params} ref={ref}
+                  className={classNames(style.form__field, isValid && 'text-primary-1', isNotValid && 'text-red-light')}
                   placeholder={placeholder} />
-          {type === 'password' && <span className="absolute right-[1rem] top-[2rem]" onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <PictoSvg className="text-white" icon="eye-show" /> : <PictoSvg icon="eye-hidden" />}
-          </span>}
-            <label htmlFor={name} className={style.form__label}>{label}</label>
-          {isNotValid && <p className="text-red-600">{messageError}</p>}
-        </div>
   )
-}
+},
+)
 
 export default InputForm
