@@ -1,10 +1,10 @@
 import React from 'react'
-import sport from '../../public/images/sport.svg'
 import image1 from '../../public/images/image1.png'
 import image2 from '../../public/images/image2.png'
+import font from '../../public/images/fond.jpeg'
 
 const gradiant = {
-    background: 'linear-gradient(360deg, white 0%, rgb(100, 33, 160, 0.9) 100%, rgb(100, 33, 160, 0.8) 100%)',
+  background: 'linear-gradient(360deg, white 0%, rgb(100, 33, 160, 0.9) 100%, rgb(100, 33, 160, 0.8) 100%)',
 }
 
 const Profil = () => {
@@ -46,9 +46,9 @@ const Profil = () => {
                     actualité complexe, et démêlera le vrai du faux.
                 </p>
             </div>
-            <p className="text-center text-white my-8 text-[#09156F] font-bold">Tous les vendredis à 11h la <span className="uppercase">Newsletter énergie</span> de la Tribune</p>
+            <p className="text-center  my-8 text-[#09156F] font-bold">Tous les vendredis à 11h la <span className="uppercase">Newsletter énergie</span> de la Tribune</p>
             <div className="flex justify-around">
-                <img className="rounded-full w-[6rem]" src={sport} alt=""/>
+                <img className=" w-[14rem]" src={font} alt=""/>
                 <button className="rounded-full text-white font-bold px-10 py-2 bg-[#09156F] border-[#09156F]">S'abonner</button>
             </div>
         </div>

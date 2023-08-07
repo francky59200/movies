@@ -16,7 +16,9 @@
     "forceConsistentCasingInFileNames": true,
     "types": [
       "vitest",
-      "vite/client"
+      "vite/client",
+      "cypress",
+      "node"
     ],
     "paths": {
       "~/*": ["src/*"]
