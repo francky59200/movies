@@ -24,6 +24,7 @@ module.exports = {
       'grey-scale-3': '#666',
       'grey-scale-4': '#444',
       'gray-light': '#d3dce6',
+      'red-light': '#FF0000',
     },
     screens: {
       'sm': '400px',
