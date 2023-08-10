@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import type { SubmitHandler } from 'react-hook-form'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-hot-toast/headless'
 import sport from '../../public/images/sport.svg'
 import Button from '~/elements/Button/Button'
 import { rules } from '~/utils/formRules'
@@ -23,6 +24,7 @@ const Connexion = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false)
   const { handleSubmit, register, formState: { errors, touchedFields } } = useForm<formInputs>({ mode: 'onSubmit', reValidateMode: 'onChange' })
   const onSubmit: SubmitHandler<formInputs> = (data) => {
+    toast.success('votre compte est crée', { duration: 10000 })
     console.log(data)
   }
   return (
@@ -49,13 +51,13 @@ const Connexion = () => {
                         </div>
                         <div className={style.form__group}>
                         <InputForm {...register('email', rules.email)}
-                                   id="email" isValid={touchedFields.name && !errors.email} placeholder="Email" isNotValid={errors.email} type="email" className="mb-5" />
+                                   id="email" isValid={touchedFields.name && !errors.email} placeholder="Email" isNotValid={errors.email} type="email"  />
                             <label htmlFor="email" className={style.form__label}>Email</label>
                             {errors && <p className="text-red-light mt-2">{errors.email?.message}</p>}
                         </div>
                         <div className={style.form__group}>
                         <InputForm {...register('password', rules.password)}
-                                    id="password" placeholder="Mot de passe" isValid={touchedFields.password && !errors.password} isNotValid={errors.password} type="password" className="mb-5" />
+                                    id="password" placeholder="Mot de passe" isValid={touchedFields.password && !errors.password} isNotValid={errors.password} type="password"  />
                             <span className="absolute right-[1rem] top-[2rem]" onClick={() => setShowPassword(!showPassword)}>
                                     {showPassword ? <PictoSvg className="text-white" icon="eye-show" /> : <PictoSvg icon="eye-hidden" />}
                             </span>
@@ -81,7 +83,7 @@ const Connexion = () => {
                         {errors && <p className="text-red-light mt-3">{errors.name?.message}</p>}
                         </div>
                         <div className={style.form__group}>
-                        <InputForm {...register('password', rules.password)} id="password" placeholder="Mot de passe" isValid={touchedFields.password && !errors.password} isNotValid={errors.password} type={showPassword ? 'text' : 'password'} className="mb-5" />
+                        <InputForm {...register('password', rules.password)} id="password" placeholder="Mot de passe" isValid={touchedFields.password && !errors.password} isNotValid={errors.password} type={showPassword ? 'text' : 'password'}  />
                         <span className="absolute right-[1rem] top-[2rem]" onClick={() => setShowPassword(!showPassword)}>
                                    {showPassword ? <PictoSvg className="text-white" icon="eye-show" /> : <PictoSvg icon="eye-hidden" />}
                         </span>

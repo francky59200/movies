@@ -2,19 +2,12 @@ import React from 'react'
 import style from './InputForm.module.scss'
 
 export interface Props {
-  name?: string
-  label?: string
   type?: string
-  defaultValue?: string
   id?: string
-  helperText?: string
-  className?: string
-  control?: any
-  placeholder?: any
+  placeholder?: string
   data?: string
   isValid?: any
   isNotValid?: any
-  messageError?: string
 }
 
 const classNames = (...classes: any) => {

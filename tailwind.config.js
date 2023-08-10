@@ -19,6 +19,7 @@ module.exports = {
       'primary-2': '#282934',
       'primary-3': '#020232',
       'white': '#FDFDFD',
+      'success': '#008000',
       'grey-scale-1': '#EEE',
       'grey-scale-2': '#D0D0D0',
       'grey-scale-3': '#666',
