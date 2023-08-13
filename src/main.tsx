@@ -8,6 +8,7 @@ import WorkhoutDetail from '~/components/WorkhoutDetail/WorkhoutDetail'
 import Profil from '~/components/Profil/Profil'
 import NotFound from '~/components/NotFound/NotFound'
 import Connexion from '~/components/Connexion/Connexion'
+import Alert from '~/elements/Alert/Alert'
 
 const router = createBrowserRouter([
   {
@@ -44,5 +45,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('app') as HTMLElement).render(
     <AuthProvider>
             <RouterProvider router={router} />
+      <Alert />
     </AuthProvider>,
 )
