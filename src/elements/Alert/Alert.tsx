@@ -23,7 +23,7 @@ const Alert = () => {
               return <div key={id} onMouseEnter={startPause} onMouseLeave={endPause}
                           className={classNames(type === 'success' && 'bg-success', type === 'error' && 'bg-red-light', 'text-white items-center text-[1rem] text-center px-5 py-5 relative')}>
                   <p dangerouslySetInnerHTML={{ __html: markdown.toHTML(message) }} />
-                  {duration === Infinity && <button onClick={() => toast.dismiss(id)}><PictoSvg icon="close" /></button>}
+                  {duration === Infinity && <button className="absolute right-0.5 bottom-[1.2rem]" onClick={() => toast.dismiss(id)}><PictoSvg icon="close" /></button>}
                 </div>
             })}
 

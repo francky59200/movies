@@ -3,7 +3,7 @@ import fetchClient from '~/api'
 import type { Account } from '~/types/account/account'
 import type { Resume } from '~/types/account/resume'
 
-export async function login(email: string, password: string): Promise<AccountToken> {
+export async function login(email: string | undefined, password: string | undefined): Promise<AccountToken> {
   try {
     const payload = {
       email,

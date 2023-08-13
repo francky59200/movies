@@ -18,8 +18,6 @@ const InputForm: React.FC<Props> = React.forwardRef(({
   id, type, placeholder,
   data, isValid, isNotValid, ...params
 }, ref: React.ForwardedRef<HTMLInputElement>) => {
-  console.log('input valide',isValid)
-  console.log('input is not valid', isNotValid)
   return (
           <input type={type} id={id} data-cy={data} {...params} ref={ref}
                   className={classNames(style.form__field, (!isValid && !isNotValid && 'text-white'), isValid && 'text-primary-1', isNotValid && 'text-red-light')}
