@@ -10,10 +10,10 @@ export const rules = {
   password: {
     required: { value: true, message: 'Ce champ est obligatoire' },
     minLength: { value: 4, message: 'Votre mot de passe est trop court' },
-    pattern: {
+    /* pattern: {
       value: regex.password,
       message: 'Votre mot de passe n\'est pas correcte',
-    },
+    }, */
   },
   confirm: {
     required: { value: true, message: 'Ce champ est obligatoire' },

@@ -9,8 +9,8 @@ export async function login(email: string | undefined, password: string | undefi
       email,
       password,
     }
-    const { data: token } = await fetchClient().post('/login', payload)
-    localStorage.setItem('token', token)
+    const { data: token } = await fetchClient().post('auth/login', payload)
+    localStorage.setItem('token', token.access_token)
     return token
   }
   catch (e) {

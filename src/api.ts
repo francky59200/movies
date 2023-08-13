@@ -7,7 +7,7 @@ interface DefaultOptions {
 
 export default function fetchClient() {
   const defaultOptions: DefaultOptions = {
-    baseURL: import.meta.env.VITE_URL,
+    baseURL: import.meta.env.VITE_DEV,
     headers: {
       'Content-Type': 'application/json',
     },
