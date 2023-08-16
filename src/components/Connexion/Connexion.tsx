@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react'
 import type { SubmitHandler } from 'react-hook-form'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast/headless'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import sport from '../../public/images/sport.svg'
 import Button from '~/elements/Button/Button'
 import { rules } from '~/utils/formRules'
@@ -31,7 +31,7 @@ const Connexion = () => {
       return
     login(data.email, data.password).then(() => {
       toast.success('votre compte est crée', { duration: 8000 })
-      navigate('/account')
+      window.location.href = '/account'
       console.log(data)
     }).catch(() => {
       toast.error('une erreur s est prouit', { duration: Infinity })
@@ -88,12 +88,12 @@ const Connexion = () => {
                   : <form className=" px-6 relative" onSubmit={handleSubmit(onSubmit)}>
                         <div className={style.form__group}>
                         <InputForm {...register('email', rules.email)} id="email" isValid={touchedFields.email && !errors.email} isNotValid={errors.email}
-                                   data="input-email-register" placeholder="Email" />
+                                   data="input-login-email" placeholder="Email" />
                         <label htmlFor="Email" className={style.form__label}>Email</label>
                         {errors && <p className="text-red-light mt-3">{errors.email?.message}</p>}
                         </div>
                         <div className={style.form__group}>
-                        <InputForm {...register('password', rules.password)} id="password" placeholder="Mot de passe" isValid={touchedFields.password && !errors.password} isNotValid={errors.password} type={showPassword ? 'text' : 'password'} />
+                        <InputForm {...register('password', rules.password)} id="password" data="input-login-password" placeholder="Mot de passe" isValid={touchedFields.password && !errors.password} isNotValid={errors.password} type={showPassword ? 'text' : 'password'} />
                         <span className="absolute right-[1rem] top-[2rem]" onClick={() => setShowPassword(!showPassword)}>
                                    {showPassword ? <PictoSvg icon="eye-show" /> : <PictoSvg icon="eye-hidden" />}
                         </span>
@@ -101,7 +101,7 @@ const Connexion = () => {
                         {errors && <p className="text-red-light mt-3">{errors.password?.message}</p>}
                         </div>
                         <a className='no-underline text-primary-1 font-bold -mt-6 mb-9 block text-[0.9rem]'>Mot de passe oublié</a>
-                        <Button type="submit" text='Me connecter' className="text-white" />
+                        <Button id="button-login" type="submit" text='Me connecter' className="text-white" />
                         <p className="relative w-full my-9 text-center text-white before:absolute before:content-[''] before:w-[45%] before:h-[0.1rem] before:top-[50%] before:left-0 before:bg-line after:absolute after:content-[''] after:w-[45%] after:h-[0.1rem] after:top-[50%] after:right-0 after:bg-line">Ou</p>
                     </form>}
                 {!showRegister

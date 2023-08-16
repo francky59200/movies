@@ -2,24 +2,19 @@ import axios from 'axios'
 
 interface DefaultOptions {
   baseURL: string | undefined
-  headers?: { 'Content-Type'?: string; Authorization?: string }
+  maxBodyLength: any
+  headers?: { 'Content-Type'?: string; token?: string }
 }
 
 export default function fetchClient() {
+  const token: string | null = localStorage.getItem('token')
   const defaultOptions: DefaultOptions = {
-    baseURL: import.meta.env.VITE_DEV,
+    baseURL: import.meta.env.VITE_URL,
+    maxBodyLength: Infinity,
     headers: {
       'Content-Type': 'application/json',
+      'token': token || '',
     },
   }
-  const instance = axios.create(defaultOptions)
-
-  instance.interceptors.request.use((config) => {
-    const token: string | null = localStorage.getItem('token')
-    console.log(token)
-    config.headers.Authorization = token ? `Bearer ${token}` : ''
-    return config
-  })
-
-  return instance
+  return axios.create(defaultOptions)
 }

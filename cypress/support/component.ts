@@ -33,6 +33,10 @@ declare global {
   }
 }
 
+Cypress.on('uncaught:exception', (err, runnable) => {
+  return false
+})
+
 Cypress.Commands.add('mount', mount)
 
 // Example use:

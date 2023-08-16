@@ -5,19 +5,25 @@ import type { Resume } from '~/types/account/resume'
 
 export async function login(email: string | undefined, password: string | undefined): Promise<AccountToken> {
   try {
-    const payload = {
+    const payload = JSON.stringify({
       email,
       password,
-    }
-    const { data: token } = await fetchClient().post('auth/login', payload)
-    localStorage.setItem('token', token.access_token)
+    })
+    const { data: token } = await fetchClient().post('/login', payload)
+    localStorage.setItem('token', token)
     return token
   }
   catch (e) {
     throw e
   }
 }
+export function isAuthenticated() {
+  const logged = localStorage.getItem('token')
+  if (!logged)
+    return null
 
+  return logged
+}
 export function logout(): void {
   return localStorage.removeItem('token')
 }
