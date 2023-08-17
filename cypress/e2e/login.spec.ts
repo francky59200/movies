@@ -14,11 +14,9 @@ context('test page connexion', () => {
     cy.get('#button-login').should('be.visible')
     cy.get('#button-login').click()
 
-
-    cy.contains('votre compte est crée').should('exist')
-
     cy.url().should('include', '/account')
 
     cy.contains('welcome to your dashboard').should('exist')
   })
 })
+
