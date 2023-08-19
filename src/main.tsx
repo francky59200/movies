@@ -9,6 +9,7 @@ import Profil from '~/components/Profil/Profil'
 import NotFound from '~/components/NotFound/NotFound'
 import Connexion from '~/components/Connexion/Connexion'
 import Alert from '~/elements/Alert/Alert'
+import ProtectedRoutes from '~/components/ProtectedRoutes/ProtectedRoutes'
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/account',
+    element: <ProtectedRoutes />,
     children: [
       {
         index: true,

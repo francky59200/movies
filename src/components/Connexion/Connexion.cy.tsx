@@ -3,8 +3,9 @@ import { mount } from 'cypress/react18'
 import Connexion from './Connexion'
 
 describe('<Connexion />', () => {
-  it('renders', () => {
+  it('test value input', ()=> {
     mount(<Connexion />)
-    cy.get('input').should('have.attr', 'label', 'mot de passe')
+    cy.get('[data-cy="input-login-email"]').should('be.visible')
+    cy.get('[data-cy="input-login-email"]').type('monmail@mail.fr').should('have.value', 'monmail@mail.fr')
   })
 })

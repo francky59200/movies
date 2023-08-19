@@ -16,9 +16,9 @@ interface AuthInterface {
 export const AuthContext = createContext<AuthInterface>({} as AuthInterface)
 
 function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<Resume>()
-  const [profile, setProfile] = useState<Account>()
-  const [trophies, setTrophies] = useState<Trophy[]>()
+  const [user, setUser] = useState<Resume | {}>({})
+  const [profile, setProfile] = useState<Account | {}>({})
+  const [trophies, setTrophies] = useState<Trophy[] | []>([])
 
   useEffect(() => {
     const autentificate = isAuthenticated()
@@ -28,6 +28,8 @@ function AuthProvider({ children }: { children: ReactNode }) {
       getTrophies().then(res => setTrophies(res))
     }
   }, [isAuthenticated()])
+
+  console.log(user)
 
   const memoValue: any = useMemo(
     () => ({
