@@ -13,6 +13,7 @@ const PictoSvg = ({ icon, className }: Props) => {
     if (icon === undefined)
       return
     let isMounted = true
+    console.log(icon)
     import(`../../public/icons/${icon}.svg`).then((module) => {
       return isMounted && setSvgSource(module.default)
     })

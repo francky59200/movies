@@ -29,11 +29,36 @@ declare global {
   namespace Cypress {
     interface Chainable {
       mount: typeof mount
+      login(email: string, password: string): typeof login
     }
   }
 }
 
+Cypress.on('uncaught:exception', (err, runnable) => {
+  return false
+})
+
 Cypress.Commands.add('mount', mount)
+
+function login(email: string, password: string): void {
+  cy.visit('/')
+
+  cy.get('[data-cy="input-login-email"]').should('be.visible')
+
+  cy.get('[data-cy="input-login-email"]').type(email)
+
+  cy.get('[data-cy="input-login-email"]').should('have.value', email)
+
+  cy.get('[data-cy="input-login-password"]').should('be.visible')
+
+  cy.get('[data-cy="input-login-password"]').type(password)
+
+  cy.get('[data-cy="input-login-password"]').should('have.value', password)
+
+  cy.get('#button-login').should('be.visible')
+  cy.get('#button-login').click()
+}
+Cypress.Commands.add('login', login)
 
 // Example use:
 // cy.mount(<MyComponent />)
