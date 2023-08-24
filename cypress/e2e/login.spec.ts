@@ -14,9 +14,20 @@ context('test page connexion', () => {
     cy.get('#button-login').should('be.visible')
     cy.get('#button-login').click()
 
+    cy.request({
+      method: 'POST',
+      url: 'http://localhost:3456/login',
+      body: {
+        email: 'john@doe.fr',
+        password: 'MyAwe$omePa$$w0rD',
+      },
+    }).then((response)=> {
+      expect(response.status).to.eq(200)
+      cy.log(response.body)
+    })
+
     cy.url().should('include', '/account')
 
     cy.contains('welcome to your dashboard').should('exist')
   })
 })
-

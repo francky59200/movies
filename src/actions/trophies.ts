@@ -1,5 +1,5 @@
 import type { Trophy } from '~/types/trophy/trophy'
-import fetchClient from '~/api'
+import fetchClient from '~/createAxiosInstance'
 
 export async function getTrophies(): Promise<Trophy[]> {
   try {

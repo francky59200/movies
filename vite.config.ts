@@ -22,7 +22,7 @@ export default defineConfig({
     // svelte(),
   ],
   test: {
-    include: ['test/**/*.test.{j,t}s'],
+    include: ['test/**/*.test.{j,t}s', 'test/**/*.test.{j,t}sx'],
     environment: 'jsdom',
   },
 })

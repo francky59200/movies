@@ -1,5 +1,5 @@
 import type { WorkoutInfo } from '~/types/workout/workoutInfo'
-import fetchClient from '~/api'
+import fetchClient from '~/createAxiosInstance'
 import type { WorkoutDetailInfo } from '~/types/workout/workoutDetailInfo'
 
 export async function addWorkout(workout: WorkoutInfo): Promise<WorkoutInfo> {

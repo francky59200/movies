@@ -18,7 +18,9 @@
       "vitest",
       "vite/client",
       "cypress",
-      "node"
+      "node",
+      "@testing-library/jest-dom",
+      "jest"
     ],
     "paths": {
       "~/*": ["src/*"]

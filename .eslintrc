@@ -8,6 +8,7 @@
   ],
   "rules": {
     "@typescript-eslint/no-require-imports": "off",
+    "@ts-expect-error": "off",
     "no-useless-catch": "off",
     "import/no-unresolved": "off",
     "antfu/top-level-function": "off",
