@@ -2,7 +2,7 @@ import { vi } from 'vitest'
 
 const createAxiosInstance = vi.fn(() => {
   return Promise.resolve({
-    data: { email: 'john@doe.fr', password: 'MyAwe$omePa$$w0rD' },
+    data: { token: '12345' },
     status: 200,
   })
 })
