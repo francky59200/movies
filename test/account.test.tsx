@@ -20,7 +20,7 @@ test('login user success token with authenticated', async () => {
     token: '12345',
   }
 
-  // @ts-ignore
+  // @ts-expect-error
   createAxiosInstance.mockImplementation(() => {
     return Promise.resolve({
       data: { token: '12345' }, // bad token to resolve
@@ -64,7 +64,6 @@ test('test user with bad token', async () => {
   })
   expect(token).not.toEqual(payload)
 })
-
 
 test('Get resume user', async () => {
   const payload = {
