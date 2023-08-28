@@ -5,6 +5,7 @@
     "nickname": "TheOnlyJohnDoe",
     "email": "john@doe.fr",
     "password": "MyAwe$omePa$$w0rD",
+    "confirm": "",
     "city": "New York City",
     "avatar": "/avatar/123456",
     "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ijg4MmI1Yjk5LTQ0M2YtNGUyYy1iMTY1LWVmNjlkZjU5YjUwMiJ9.",
@@ -157,6 +158,15 @@
         "speed"
       ]
     }
+  },
+  "userRegister": {
+    "name": "Jean",
+    "lastname": "Moulin",
+    "nickname": "TheOnlyMoulin",
+    "email": "jeanMoulin@doe.fr",
+    "password": "Atecna@2024",
+    "confirmPassword": "Atecna@2024",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ijg4MmI1Yjk5LTQ0M2YtNGUyYy1iMTY1LWVmNjlkZjU5YjUwMiJ9."
   },
   "nicknameUsed": [
     "JohnDoe",

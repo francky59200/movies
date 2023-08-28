@@ -18,6 +18,22 @@ export async function login(email: string | undefined, password: string | undefi
     throw e
   }
 }
+
+export async function registerUser(name: string | undefined, email: string | undefined, password: string | undefined): Promise<AccountToken> {
+  const payload: Record<string, any> | string = JSON.stringify({
+    name,
+    email,
+    password,
+  })
+  try {
+    const { data: token } = await createAxiosInstance({ method: 'POST', url: '/register', data: payload })
+    localStorage.setItem('token', token)
+    return token
+  }
+  catch (e) {
+    throw e
+  }
+}
 export function isAuthenticated() {
   const logged = localStorage.getItem('token')
   if (!logged)
