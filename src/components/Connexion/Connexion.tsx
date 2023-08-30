@@ -2,13 +2,14 @@ import React, { Fragment, useState } from 'react'
 import type { SubmitHandler } from 'react-hook-form'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast/headless'
+import { useNavigate } from 'react-router-dom'
 import sport from '../../public/images/sport.svg'
 import Button from '~/elements/Button/Button'
 import { rules } from '~/utils/formRules'
 import InputForm from '~/elements/InputForm/InputForm'
 import style from '~/elements/InputForm/InputForm.module.scss'
 import PictoSvg from '~/elements/PictoSvg/PictoSvg'
-import { login } from '~/actions/account'
+import { login, registerUser } from '~/actions/account'
 
 interface formInputs {
   name?: string
@@ -21,6 +22,7 @@ interface formInputs {
 }
 
 const Connexion = () => {
+  const navigate = useNavigate()
   const [showRegister, setShowRegister] = useState<boolean>(false)
   const [showPassword, setShowPassword] = useState<boolean>(false)
   const { handleSubmit, register, formState: { errors, touchedFields } } = useForm<formInputs>({ mode: 'onSubmit', reValidateMode: 'onChange' })
@@ -36,7 +38,15 @@ const Connexion = () => {
     })
   }
   const onRegister: SubmitHandler<formInputs> = (data) => {
-    console.log(data)
+    if (Object.keys(errors).length)
+      return
+
+    registerUser(data.name, data.email, data.password).then(() => {
+      toast.success('Votre compte est crée', { duration: 5000 })
+      navigate('/')
+    }).catch(() => {
+      toast.error('Veuillez vérifier votre enregistrement')
+    })
   }
   return (
         <Fragment>

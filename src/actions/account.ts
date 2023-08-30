@@ -1,15 +1,32 @@
 import type { AccountToken } from '~/types/account/accountToken'
-import fetchClient from '~/api'
 import type { Account } from '~/types/account/account'
 import type { Resume } from '~/types/account/resume'
+import createAxiosInstance from '~/createAxiosInstance'
 
 export async function login(email: string | undefined, password: string | undefined): Promise<AccountToken> {
   try {
-    const payload = JSON.stringify({
+    const payload: Record<string, unknown> | string = JSON.stringify({
       email,
       password,
     })
-    const { data: token } = await fetchClient().post('/login', payload)
+    const { data: token } = await createAxiosInstance({ method: 'POST', url: '/login', data: payload })
+    console.log(token)
+    localStorage.setItem('token', token)
+    return token
+  }
+  catch (e) {
+    throw e
+  }
+}
+
+export async function registerUser(name: string | undefined, email: string | undefined, password: string | undefined): Promise<AccountToken> {
+  const payload: Record<string, any> | string = JSON.stringify({
+    name,
+    email,
+    password,
+  })
+  try {
+    const { data: token } = await createAxiosInstance({ method: 'POST', url: '/register', data: payload })
     localStorage.setItem('token', token)
     return token
   }
@@ -30,7 +47,7 @@ export function logout(): void {
 
 export async function update(account: Account): Promise<Account> {
   try {
-    const { data } = await fetchClient().post('/user/profile', account)
+    const { data } = await createAxiosInstance({ method: 'POST', url: '/user/profile', data: account })
     return data
   }
   catch (e) {
@@ -40,7 +57,7 @@ export async function update(account: Account): Promise<Account> {
 
 export async function getUserResume(): Promise<Resume> {
   try {
-    const { data: user } = await fetchClient().get('/user/resume')
+    const { data: user } = await createAxiosInstance({ method: 'GET', url: '/user/resume' })
     return user
   }
   catch (e) {
@@ -50,7 +67,7 @@ export async function getUserResume(): Promise<Resume> {
 
 export async function getUserProfile(): Promise<Account> {
   try {
-    const { data: profile } = await fetchClient().get('/user/profile')
+    const { data: profile } = await createAxiosInstance({ method: 'GET', url: '/user/profile' })
     return profile
   }
   catch (e) {

@@ -9,7 +9,7 @@
     "avatar": "/avatar/123456",
     "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ijg4MmI1Yjk5LTQ0M2YtNGUyYy1iMTY1LWVmNjlkZjU5YjUwMiJ9.",
     "last30Days": {
-      "workoutNumber": 14,
+      "workoutNumber": 12,
       "totalKilometer": "82,16km",
       "totalTime": "8h31mn",
       "fastestKilometer": "5mn45/km",
@@ -157,6 +157,152 @@
         "speed"
       ]
     }
+  },
+  "userSecond": {
+    "name": "Jean",
+    "lastname": "Moulin",
+    "nickname": "TheOnlyMoulin",
+    "email": "jeanMoulin@doe.fr",
+    "password": "Atecna@2024",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ijg4MmI1Yjk5LTQ0M2YtNGUyYy1iMTY1LWVmNjlkZjU5YjUwMiJ9jhjhttytytytyt.",
+    "city": "New York City",
+    "avatar": "/avatar/123456",
+    "last30Days": {
+      "workoutNumber": 15,
+      "totalKilometer": "100,16km",
+      "totalTime": "10h31mn",
+      "fastestKilometer": "7mn45/km",
+      "lastTrophy": {
+        "label": "Distance totale parcourue",
+        "id": "totalDistance",
+        "value": "200km",
+        "tier": 3
+      }
+    },
+    "trophies": [{
+      "earned": true,
+      "label": "Distance totale parcourue",
+      "id": "totalDistance",
+      "value": "100km",
+      "tier": 3
+    },
+      {
+        "earned": false,
+        "label": "Distance totale parcourue",
+        "id": "totalDistance",
+        "value": "1000km",
+        "tier": 2
+      },
+      {
+        "earned": false,
+        "label": "Distance totale parcourue",
+        "id": "totalDistance",
+        "value": "5000km",
+        "tier": 1
+      },
+      {
+        "earned": true,
+        "label": "Temps d'entrainement total",
+        "id": "totalTime",
+        "value": "10h",
+        "tier": 3
+      },
+      {
+        "earned": true,
+        "label": "Temps d'entrainement total",
+        "id": "totalTime",
+        "value": "100h",
+        "tier": 2
+      },
+      {
+        "earned": false,
+        "label": "Temps d'entrainement total",
+        "id": "totalTime",
+        "value": "1000h",
+        "tier": 1
+      },
+      {
+        "earned": true,
+        "label": "Meilleurs temps au kilomètre",
+        "id": "bestKilometer",
+        "value": "7mn30/km",
+        "tier": 3
+      },
+      {
+        "earned": true,
+        "label": "Meilleurs temps au kilomètre",
+        "id": "bestKilometer",
+        "value": "6mn/km",
+        "tier": 2
+      },
+      {
+        "earned": false,
+        "label": "Meilleurs temps au kilomètre",
+        "id": "bestKilometer",
+        "value": "5mn/km",
+        "tier": 1
+      }
+    ],
+    "workouts": [
+      "02/04/2022",
+      "06/04/2022",
+      "07/04/2022",
+      "12/04/2022",
+      "14/04/2022",
+      "18/04/2022",
+      "21/04/2022",
+      "24/04/2022"
+    ],
+    "workoutDetails": {
+      "id": "w012345",
+      "date": 1653393486,
+      "distance": "12,43",
+      "time": 3832,
+      "checkpoints": [{
+        "distance": 0,
+        "time": 0,
+        "coordinates": {
+          "lat": 50.66841,
+          "lon": 3.1150411
+        }
+      },
+        {
+          "distance": 1,
+          "time": 462,
+          "coordinates": {
+            "lat": 50.66842,
+            "lon": 3.1150412
+          }
+        },
+        {
+          "distance": 2,
+          "time": 863,
+          "coordinates": {
+            "lat": 50.66843,
+            "lon": 3.1150413
+          }
+        },
+        {
+          "distance": 2.43,
+          "time": 1017,
+          "coordinates": {
+            "lat": 50.66844,
+            "lon": 3.1150414
+          }
+        }
+      ],
+      "records": [
+        "speed"
+      ]
+    }
+  },
+  "userRegister": {
+    "name": "Jean",
+    "lastname": "Moulin",
+    "nickname": "TheOnlyMoulin",
+    "email": "jeanMoulin@doe.fr",
+    "password": "Atecna@2024",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ijg4MmI1Yjk5LTQ0M2YtNGUyYy1iMTY1LWVmNjlkZjU5YjUwMiJ9."
   },
   "nicknameUsed": [
     "JohnDoe",
