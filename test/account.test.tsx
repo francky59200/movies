@@ -31,7 +31,7 @@ test('login user success token with authenticated', async () => {
   // Appel de la fonction de login
   const token = await login('johnsdsd@doe.fr', 'MyAwe$omePa$$w0rD')
 
-  // Vérifie que mockAxios.post a été appelé avec les bons paramètres
+  // Vérifie que linstance axios a été appelé avec les bons paramètres
   expect(createAxiosInstance).toHaveBeenCalledWith({
     data: JSON.stringify({ email: 'johnsdsd@doe.fr', password: 'MyAwe$omePa$$w0rD' }),
     method: 'POST',

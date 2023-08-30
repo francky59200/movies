@@ -8,5 +8,12 @@ module.exports = (req, res) => {
     })
     return
   }
+  if (req.headers.token === data.userSecond.token) {
+    res.status(200).send({
+      ...data.userSecond.workoutDetails,
+      id: req.params.workoutId,
+    })
+    return
+  }
   res.status(401).send('Invalid credentials')
 }
