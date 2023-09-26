@@ -79,8 +79,9 @@ test('Get resume user', async () => {
     },
   }
 
-  // @ts-expect-error
 
+
+  // @ts-ignore
   createAxiosInstance.mockImplementation(() => {
     return Promise.resolve({
       data: {

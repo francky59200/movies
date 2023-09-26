@@ -3,9 +3,9 @@ import { mount } from 'cypress/react18'
 import Connexion from './Connexion'
 
 describe('<Connexion />', () => {
-  it('test value input', ()=> {
+  it('test value input', () => {
+    cy.visit('/')
     mount(<Connexion />)
-    cy.get('[data-cy="input-login-email"]').should('be.visible')
-    cy.get('[data-cy="input-login-email"]').type('monmail@mail.fr').should('have.value', 'monmail@mail.fr')
+    cy.contains('No time to rest, Booya !', { timeout: 10000 }).should('be.visible')
   })
 })

@@ -2,7 +2,6 @@ context('Automation success login Fixtures', () => {
   beforeEach(() => {
     cy.visit('/')
     cy.fixture('userSuccess').then(function (data) {
-      // eslint-disable-next-line @typescript-eslint/no-invalid-this
       this.data = data
     })
   })
@@ -26,7 +25,7 @@ context('Automation success login Fixtures', () => {
 
     cy.url().should('include', '/account')
 
-    cy.contains('welcome to your dashboard').should('exist')
+    cy.contains('Trophées').should('exist')
   })
 })
 
@@ -49,6 +48,6 @@ context('Automation failed login Fixtures', () => {
     cy.get('#button-login').should('be.visible')
     cy.get('#button-login').click()
 
-    cy.contains('une erreur s est prouit').should('exist')
+    cy.contains('Compte inéxistant').should('exist')
   })
 })
