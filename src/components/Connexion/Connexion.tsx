@@ -30,11 +30,10 @@ const Connexion = () => {
     if (Object.keys(errors).length)
       return
     login(data.email, data.password).then(() => {
-      toast.success('votre compte est crée', { duration: 8000 })
-      window.location.href = '/account'
-      console.log(data)
+      navigate('/account')
+      toast.success('votre compte est crée', { duration: 3000 })
     }).catch(() => {
-      toast.error('une erreur s est prouit', { duration: Infinity })
+      toast.error('Compte inéxistant', { duration: Infinity })
     })
   }
   const onRegister: SubmitHandler<formInputs> = (data) => {
@@ -95,6 +94,10 @@ const Connexion = () => {
                             {errors && <p className="text-red-light mt-2">{errors.confirm?.message}</p>}
                         </div>
                         <Button type="submit" text='Creer mon compte' className="text-white" />
+                        <p className="relative w-full my-9 text-center text-white before:absolute before:content-[''] before:w-[45%] before:h-[0.1rem] before:top-[50%] before:left-0 before:bg-line after:absolute after:content-[''] after:w-[45%] after:h-[0.1rem] after:top-[50%] after:right-0 after:bg-line">Ou</p>
+                        <div>
+                            <Button id="change-form" onClick={() => setShowRegister(false)} text='Me connecter' className="text-white" />
+                        </div>
                     </form>
                   : <form className=" px-6 relative" onSubmit={handleSubmit(onSubmit)}>
                         <div className={style.form__group}>

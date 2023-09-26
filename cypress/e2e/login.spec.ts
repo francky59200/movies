@@ -28,6 +28,6 @@ context('test page connexion', () => {
 
     cy.url().should('include', '/account')
 
-    cy.contains('welcome to your dashboard').should('exist')
+    cy.contains('Trophées').should('exist')
   })
 })

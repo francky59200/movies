@@ -1,6 +1,7 @@
 export interface Trophy {
+  earned: boolean
   label: string
   id: string
-  value: string
-  tier: number
+  detail: string
+  tier?: number
 }

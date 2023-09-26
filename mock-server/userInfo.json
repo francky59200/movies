@@ -22,87 +22,44 @@
     },
     "trophies": [{
       "earned": true,
-      "label": "Distance totale parcourue",
-      "id": "totalDistance",
-      "value": "100km",
-      "tier": 3
+      "label": "Vo2 max",
+      "id": "vo2",
+      "detail": "ma vo2 max atteint avec beaucoup d'effort"
+    },
+    {
+      "earned": true,
+      "label": "Meilleur temps en course",
+      "id": "tempsCourse",
+      "detail": "Mon meilleur temps en course 10km en 45mn",
+      "tiers": 6
+    },
+    {
+      "earned": true,
+      "label": "Temps de natation",
+      "id": "natation",
+      "detail": "Mon meilleur temps en natation",
+      "tiers": 7
+    },
+    {
+      "earned": true,
+      "label": "Longue course",
+      "id": "longue",
+      "detail": "belle course longue avec beaucoup d'obstacle",
+      "tiers": 9
     },
     {
       "earned": false,
-      "label": "Distance totale parcourue",
-      "id": "totalDistance",
-      "value": "1000km",
-      "tier": 2
+      "label": "Grosse distance en vèlo",
+      "id": "vélo",
+      "detail": "grande distance en vélo tombé pendant la course",
+      "tiers": 5
     },
     {
       "earned": false,
-      "label": "Distance totale parcourue",
-      "id": "totalDistance",
-      "value": "5000km",
-      "tier": 1
-    },
-    {
-      "earned": true,
-      "label": "Temps d'entrainement total",
-      "id": "totalTime",
-      "value": "10h",
-      "tier": 3
-    },
-    {
-      "earned": true,
-      "label": "Temps d'entrainement total",
-      "id": "totalTime",
-      "value": "100h",
-      "tier": 2
-    },
-    {
-      "earned": false,
-      "label": "Temps d'entrainement total",
-      "id": "totalTime",
-      "value": "1000h",
-      "tier": 1
-    },
-    {
-      "earned": true,
-      "label": "Meilleurs temps au kilomètre",
-      "id": "bestKilometer",
-      "value": "7mn30/km",
-      "tier": 3
-    },
-    {
-      "earned": true,
-      "label": "Meilleurs temps au kilomètre",
-      "id": "bestKilometer",
-      "value": "6mn/km",
-      "tier": 2
-    },
-    {
-      "earned": true,
-      "label": "Meilleurs temps au kilomètre",
-      "id": "bestKilometer",
-      "value": "5mn/km",
-      "tier": 1
-    },
-    {
-      "earned": true,
-      "label": "Nombre d'entrainement",
-      "id": "workoutNumber",
-      "value": "10",
-      "tier": 3
-    },
-    {
-      "earned": true,
-      "label": "Nombre d'entrainement",
-      "id": "workoutNumber",
-      "value": "50",
-      "tier": 2
-    },
-    {
-      "earned": true,
-      "label": "Nombre d'entrainement",
-      "id": "workoutNumber",
-      "value": "200",
-      "tier": 1
+      "label": "Longue distance en natation",
+      "id": "distanceNatation",
+      "detail": "5 km en natation",
+      "tiers": 3
     }
     ],
     "workouts": [
@@ -115,48 +72,85 @@
       "21/04/2022",
       "24/04/2022"
     ],
-    "workoutDetails": {
-      "id": "w012345",
-      "date": 1653393486,
-      "distance": "12,43",
-      "time": 3832,
-      "checkpoints": [{
-        "distance": 0,
-        "time": 0,
-        "coordinates": {
-          "lat": 50.66841,
-          "lon": 3.1150411
-        }
+    "workoutDetails": [
+      {
+        "id": "w012345",
+        "date": 1653393486,
+        "distance": "12,43",
+        "time": 3832,
+        "checkpoints": [{
+          "distance": 0,
+          "time": 0,
+          "coordinates": {
+            "lat": 50.66841,
+            "lon": 3.1150411
+          }
+        },
+          {
+            "distance": 1,
+            "time": 462,
+            "coordinates": {
+              "lat": 50.66842,
+              "lon": 3.1150412
+            }
+          },
+          {
+            "distance": 2,
+            "time": 863,
+            "coordinates": {
+              "lat": 50.66843,
+              "lon": 3.1150413
+            }
+          }
+        ]
       },
       {
-        "distance": 1,
-        "time": 462,
-        "coordinates": {
-          "lat": 50.66842,
-          "lon": 3.1150412
+        "id": "w012345",
+        "date": 1653393486,
+        "distance": "12,43",
+        "time": 3832,
+        "checkpoints": [{
+          "distance": 0,
+          "time": 0,
+          "coordinates": {
+            "lat": 50.66841,
+            "lon": 3.1150411
+          }
+        },
+        {
+          "distance": 2.43,
+          "time": 1017,
+          "coordinates": {
+            "lat": 50.66844,
+            "lon": 3.1150414
+          }
         }
+        ]
       },
       {
-        "distance": 2,
-        "time": 863,
-        "coordinates": {
-          "lat": 50.66843,
-          "lon": 3.1150413
-        }
-      },
-      {
-        "distance": 2.43,
-        "time": 1017,
-        "coordinates": {
-          "lat": 50.66844,
-          "lon": 3.1150414
-        }
+        "id": "w012345",
+        "date": 1653393486,
+        "distance": "12,43",
+        "time": 3832,
+        "checkpoints": [{
+          "distance": 0,
+          "time": 0,
+          "coordinates": {
+            "lat": 50.66841,
+            "lon": 3.1150411
+          }
+        },
+          {
+            "distance": 1,
+            "time": 462,
+            "coordinates": {
+              "lat": 50.66842,
+              "lon": 3.1150412
+            }
+          }
+        ]
       }
-      ],
-      "records": [
-        "speed"
-      ]
-    }
+    ]
   },
   "userSecond": {
     "name": "Jean",

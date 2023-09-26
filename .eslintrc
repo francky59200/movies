@@ -13,11 +13,14 @@
     "import/no-unresolved": "off",
     "antfu/top-level-function": "off",
     "no-console": "off",
-    "no-invalid-this": "off",
+    "no-invalid-this": 0,
+    "@typescript-eslint/no-explicit-any": "off",
+    "babel/no-invalid-this": 1,
     "@typescript-eslint/no-invalid-this": "error"
   },
   "parserOptions": {
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "requireConfigFile": false
   },
   "settings": {
     "import/resolver": {

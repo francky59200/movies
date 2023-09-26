@@ -29,7 +29,6 @@ function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, [isAuthenticated()])
 
-  console.log(user)
 
   const memoValue: any = useMemo(
     () => ({

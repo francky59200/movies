@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-pattern': "linear-gradient(360deg, #282934 2%, rgba(40, 41, 52, 0.50) 32.40%, rgba(40, 41, 52, 0.30) 53.23%, rgba(40, 41, 52, 0.00) 100%), url('~/public/images/imageLogin.jpeg')",
+        'hero-pattern': 'linear-gradient(360deg, #282934 2%, rgba(40, 41, 52, 0.50) 32.40%, rgba(40, 41, 52, 0.30) 53.23%, rgba(40, 41, 52, 0.00) 100%), url(\'~/public/images/imageLogin.jpeg\')',
       },
       backgroundColor: {
         colorHome: '#282934',

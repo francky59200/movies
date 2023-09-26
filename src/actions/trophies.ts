@@ -1,9 +1,9 @@
 import type { Trophy } from '~/types/trophy/trophy'
-import fetchClient from '~/createAxiosInstance'
+import createAxiosInstance from '~/createAxiosInstance'
 
 export async function getTrophies(): Promise<Trophy[]> {
   try {
-    const { data: results } = await fetchClient().get('/user/trophies')
+    const { data: results } = await createAxiosInstance({ method: 'GET', url: '/user/trophies' })
     return results
   }
   catch (e) {
