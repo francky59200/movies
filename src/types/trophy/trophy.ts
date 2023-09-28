@@ -3,5 +3,4 @@ export interface Trophy {
   label: string
   id: string
   detail: string
-  tier?: number
 }

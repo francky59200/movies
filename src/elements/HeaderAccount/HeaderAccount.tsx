@@ -17,9 +17,7 @@ const HeaderAccount = ({ goBack }: Props) => {
 
   useEffect(() => {
     const locationSplit = location.pathname.split('/')
-    console.log(locationSplit.length)
     if (locationSplit.length > 2 && locationSplit.includes('account')) {
-      console.log(url)
       setUrl(true)
     }
   }, [url])

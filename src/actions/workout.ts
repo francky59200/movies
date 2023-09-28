@@ -1,10 +1,9 @@
-import type { WorkoutInfo } from '~/types/workout/workoutInfo'
-import fetchClient from '~/createAxiosInstance'
 import type { WorkoutDetailInfo } from '~/types/workout/workoutDetailInfo'
+import createAxiosInstance from '~/createAxiosInstance'
 
-export async function addWorkout(workout: WorkoutInfo): Promise<WorkoutInfo> {
+export async function addWorkout(workout: WorkoutDetailInfo): Promise<WorkoutDetailInfo> {
   try {
-    const { data: info } = await fetchClient().post('/workout', workout)
+    const { data: info } = await createAxiosInstance({ method: 'POST', url: '/workout', data: workout })
     return info
   }
   catch (e) {
@@ -12,10 +11,10 @@ export async function addWorkout(workout: WorkoutInfo): Promise<WorkoutInfo> {
   }
 }
 
-export async function workoutListOfMonth(): Promise<{ results: [string] }> {
+export async function getWorkouts(): Promise<WorkoutDetailInfo[]> {
   try {
-    const { data: list } = await fetchClient().get('/workout')
-    return list
+    const { data: works } = await createAxiosInstance({ method: 'GET', url: '/workout' })
+    return works
   }
   catch (e) {
     throw e
@@ -24,7 +23,7 @@ export async function workoutListOfMonth(): Promise<{ results: [string] }> {
 
 export async function workoutDetail(workoutId: number): Promise<WorkoutDetailInfo> {
   try {
-    const { data: detail } = await fetchClient().get(`/workout/detail/${workoutId}`)
+    const { data: detail } = await createAxiosInstance({ method: 'GET', url: `/workout/detail/${workoutId}` })
     return detail
   }
   catch (e) {

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, {Fragment, useContext, useState} from 'react'
 import { AuthContext } from '~/provider/AuthProvider'
 import PictoSvg from '~/elements/PictoSvg/PictoSvg'
 
@@ -17,7 +17,7 @@ export function DetailsTrophees() {
   return (
         <div className=" text-white">
             <h2 className="text-[2rem] font-bold px-8 mb-3.5">Mes trophée(s)</h2>
-            <div>
+            <Fragment>
                 {trophies.map((trophie, index) =>
                  <div className={classNames(trophie.earned ? 'border-b-white border-b-2 cursor-pointer' : 'opacity-25')}
                       onClick={e => trophie.earned
@@ -34,7 +34,7 @@ export function DetailsTrophees() {
                         </div>
                         {showtext === index && <p className="px-8 pb-4">{trophie.detail}</p>}
                     </div>)}
-            </div>
+            </Fragment>
         </div>
   )
 }

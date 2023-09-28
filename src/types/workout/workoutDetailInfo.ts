@@ -1,4 +1,4 @@
-interface Checkpoint {
+export interface Checkpoint {
   distance: number
   time: number
   coordinates: {
@@ -9,9 +9,9 @@ interface Checkpoint {
 
 export interface WorkoutDetailInfo {
   id: string
+  totalKilometer: string
+  totalTime: string
+  timeKilometer: string
   date: number
-  distance: number
-  time: number
-  checkpoints?: Checkpoint[]
-  records?: [string]
+  checkpoints: Checkpoint[]
 }

@@ -1,3 +1,4 @@
+// eslint-disable-next-line babel/no-invalid-this
 const data = require('../userInfo.json')
 
 module.exports = (req, res) => {

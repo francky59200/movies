@@ -35,7 +35,7 @@ const TropheeProgress = ({ active = false }: Props) => {
                 </CircularProgressbarWithChildren>
             </div>
             {active
-              ? <div className="text-white mt-5 block text-[1rem] font-medium underline" onClick={() => navigate('/account/trophies', {replace: true })}>
+              ? <div className="text-white cursor-pointer mt-5 block text-[1rem] font-medium underline" onClick={() => navigate('/account/trophies', {replace: true })}>
                 Voir mes trophées</div>
               : <span className="text-primary-1 font-bold text-[2rem] mt-5">{`${percentage}% complété`}</span>}
         </div>
