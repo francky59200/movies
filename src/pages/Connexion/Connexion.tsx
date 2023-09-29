@@ -41,7 +41,7 @@ const Connexion = () => {
       return
 
     registerUser(data.name, data.email, data.password).then(() => {
-      toast.success('Votre compte est crée', { duration: 5000 })
+      toast.success('Votre compte est créé', { duration: 3000 })
       navigate('/')
     }).catch(() => {
       toast.error('Veuillez vérifier votre enregistrement')

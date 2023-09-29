@@ -5,11 +5,7 @@ import short from '~/public/images/short.svg'
 import { logout } from '~/actions/account'
 import { AuthContext } from '~/provider/AuthProvider'
 
-interface Props {
-  goBack?: boolean
-}
-
-const HeaderAccount = ({ goBack }: Props) => {
+const HeaderAccount = () => {
   // const location = useLocation()
   const navigate = useNavigate()
   const { profile } = useContext(AuthContext)
@@ -17,9 +13,8 @@ const HeaderAccount = ({ goBack }: Props) => {
 
   useEffect(() => {
     const locationSplit = location.pathname.split('/')
-    if (locationSplit.length > 2 && locationSplit.includes('account')) {
+    if (locationSplit.length > 2 && locationSplit.includes('account'))
       setUrl(true)
-    }
   }, [url])
 
   const loggedUser = () => {

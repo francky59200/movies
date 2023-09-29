@@ -25,7 +25,7 @@ context('Automation success login Fixtures', () => {
 
     cy.url().should('include', '/account')
 
-    cy.contains('Trophées').should('exist')
+    cy.contains('Trophée(s)').should('exist')
   })
 })
 

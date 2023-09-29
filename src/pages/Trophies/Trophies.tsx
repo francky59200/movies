@@ -1,7 +1,7 @@
 import React from 'react'
 import TropheeProgress from '~/elements/TropheeProgress/TropheeProgress'
-import HeaderAccount from '~/elements/HeaderAccount/HeaderAccount'
-import { DetailsTrophees } from '~/components/Dashboard/partials/DetailsTrophees/DetailsTrophees'
+import HeaderAccount from '~/components/HeaderAccount/HeaderAccount'
+import { DetailsTrophees } from '~/pages/Dashboard/partials/DetailsTrophees/DetailsTrophees'
 
 const Trophies = () => {
   React.useEffect(() => {
