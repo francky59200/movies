@@ -1,6 +1,7 @@
 import axios from 'axios'
 import type { Account } from '~/types/account/account'
 
+
 interface DefaultOptions {
   baseURL: string | undefined
   maxBodyLength: any
@@ -14,13 +15,13 @@ interface FetchAgrs {
 }
 
 export default function createAxiosInstance({ method, url, data = {} }: FetchAgrs) {
-  const token: string | null = localStorage.getItem('token')
+  const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMjJkNjNjZGRjMDY2ZDk5ZWQzZTgwNmQzMjY3MThjYSIsInN1YiI6IjYyNGVhNTRhYjc2Y2JiMDA2ODIzODc4YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zuuBq1c63XpADl8SQ_c62hezeus7VibE1w5Da5UdYyo'
   const defaultOptions: DefaultOptions = {
-    baseURL: import.meta.env.VITE_URL,
+    baseURL: 'https://api.themoviedb.org/3/',
     maxBodyLength: Infinity,
     headers: {
       'Content-Type': 'application/json',
-      'token': token || '',
+      'Authorization': `Bearer ${token}`,
     },
   }
   const instance = axios.create(defaultOptions)

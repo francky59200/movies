@@ -1,5 +1,4 @@
 import React from 'react'
-import PictoSvg from '~/elements/PictoSvg/PictoSvg'
 
 export interface Props {
   text: string
@@ -11,10 +10,10 @@ export interface Props {
   type?: 'button' | 'submit' | 'reset' | undefined
 
 }
-const Button = ({ text = 'mon text', onClick, disabled, iconButton, className, type, id }: Props) => {
+const Button = ({ text = 'mon text', onClick, disabled, type, id }: Props) => {
   return (
-        <button id={id} type={type} onClick={onClick} disabled={disabled} className="w-full px-[16px] py-[10px] rounded-[0.8rem] bg-buttonColor text-white flex justify-center font-bold">
-          <span className="mr-4"><PictoSvg className={className} icon={iconButton} /></span>{text}
+        <button id={id} type={type} onClick={onClick} disabled={disabled} className=" p-5 px-[16px] py-[10px] w-full rounded-[0.8rem] bg-white text-lg text-[#01B4E4] flex justify-center font-bold">
+          {text}
         </button>
   )
 }

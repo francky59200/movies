@@ -1,26 +1,20 @@
 import React from 'react'
-import style from './InputForm.module.scss'
 
 export interface Props {
   type?: string
   id?: string
   placeholder?: string
   data?: string
-  isValid?: any
-  isNotValid?: any
-}
-
-const classNames = (...classes: any) => {
-  return classes.join(' ')
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InputForm: React.FC<Props> = React.forwardRef(({
   id, type, placeholder,
-  data, isValid, isNotValid, ...params
+  data, onChange, ...params
 }, ref: React.ForwardedRef<HTMLInputElement>) => {
   return (
-          <input type={type} id={id} data-cy={data} {...params} ref={ref}
-                  className={classNames(style.form__field, (!isValid && !isNotValid && 'text-white'), isValid && 'text-primary-1', isNotValid && 'text-red-light')}
+          <input type={type} id={id} data-cy={data} {...params} ref={ref} onChange={onChange}
+                 className='p-5 relative border border-r-2 text-[1rem] bg-white h-[3.5rem] text-grey-scale-3 w-[70%] mr-3 mb-5 focus:outline-none outline-offset-0 outline-grey-scale-2 rounded'
                  placeholder={placeholder}
                    />
   )

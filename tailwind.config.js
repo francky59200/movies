@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: [
     './index.html',
@@ -28,11 +29,8 @@ module.exports = {
       'red-light': '#FF0000',
     },
     screens: {
-      'sm': '400px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
+      ...defaultTheme.screens,
+      'myResponsive': '300px',
     },
   },
   plugins: [],
